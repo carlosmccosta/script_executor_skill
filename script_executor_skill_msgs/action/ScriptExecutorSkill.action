@@ -1,0 +1,9 @@
+#goal definition
+string script
+string arguments
+---
+#result definition
+string skillStatus
+string outcome
+---
+#feedback

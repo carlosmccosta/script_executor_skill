@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name='action_name' default="ScriptExecutorSkill"/>
+  <arg name="scripts_directory" default="$(find script_executor_skill_server)/scripts" />
+
+  <!-- The script field data given in the goal can be preprocessed for performing the substitution of a given string with the path provided in the argument above (scripts_directory) -->
+  <arg name="scripts_directory_substitution_string_for_goal_script_field" default="@" />
+
+  <node pkg="script_executor_skill_server" type="script_executor_skill.py" name="script_executor_skill" output="screen">
+      <param name='action_name' value='$(arg action_name)' />
+      <param name="scripts_directory" type="str" value="$(arg scripts_directory)"/>
+      <param name="scripts_directory_substitution_string_for_goal_script_field" type="str" value="$(arg scripts_directory_substitution_string_for_goal_script_field)"/>
+  </node>
+
+</launch>
